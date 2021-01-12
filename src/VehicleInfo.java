@@ -1,8 +1,10 @@
 import java.util.*;
 
 public class VehicleInfo {
-    public static HashMap<String, String> vehicleList = new HashMap<>();
+    private static HashMap<String, String> vehicleList = new HashMap<>();
     private static Scanner carInput = new Scanner(System.in);
+    private static String carType;
+    private static boolean containsKey;
 
     public static void createVehicleHashMap() {
         vehicleList.put("Honda", "Civic");
@@ -15,14 +17,26 @@ public class VehicleInfo {
         vehicleList.put("Dodge", "RAM");
     }
 
-    public static String askUserForCarType(){
-        System.out.println("Please enter the Make of the car you are looking for: ");
-        String carType = carInput.nextLine();
-        return carType;
+    private static void checkForValidEntry(String car) {
+        for (String c : vehicleList.keySet()) {
+            if (vehicleList.containsKey(car)) {
+                containsKey = true;
+            } else {
+                containsKey = false;
+            }
+        }
+        if (containsKey) {
+            System.out.println("The cars I have available are: " + car + " " + vehicleList.get(carType));
+        } else {
+            System.out.println("Sorry, We do not have the Model Car you are looking for!! :(");
+        }
     }
 
-    public static String checkForCarType(String carType) {
-        String carChoice = vehicleList.get(carType);
-        return carChoice;
+    public static String askUserForCarType() {
+        System.out.println("Please enter the Make of the car you are looking for: ");
+        carType = carInput.nextLine();
+        checkForValidEntry(carType);
+        return carType;
     }
 }
+

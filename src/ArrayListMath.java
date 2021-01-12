@@ -4,34 +4,33 @@ import java.util.Scanner;
 public class ArrayListMath {
     private static Scanner numInput = new Scanner(System.in);
 
-    public static void askUserForNum(ArrayList<Integer> numbers) {
-
-        for(int i = 0; i <=4; i++) {
+    public static void askUserForNum(ArrayList<Double> numbers) {
+        for(double i = 0; i <=4; i++) {
             System.out.println("Please enter a number and press enter: ");
             String currentNumber = numInput.nextLine();
-            numbers.add(Integer.parseInt(currentNumber));
+            numbers.add(Double.parseDouble(currentNumber));
         }
     }
 
-    public static int sum(ArrayList<Integer> numbers){
-        int sumTotal = 0;
-        for (int num : numbers){
+    public static double sum(ArrayList<Double> numbers){
+        double sumTotal = 0;
+        for (double num : numbers){
             sumTotal += num;
         }
         return sumTotal;
     }
 
-    public static int product(ArrayList<Integer> numbers){
-        int productTotal =1;
-        for (int num : numbers){
+    public static double product(ArrayList<Double> numbers){
+        double productTotal = 1;
+        for (double num : numbers){
             productTotal *= num;
         }
         return productTotal;
     }
 
-    public static int largest(ArrayList<Integer> numbers){
-        int largest = 0;
-        for (int num : numbers) {
+    public static double largest(ArrayList<Double> numbers){
+        double largest = 0;
+        for (double num : numbers) {
             if (largest < num) {
                 largest = num;
             }
@@ -39,9 +38,9 @@ public class ArrayListMath {
         return largest;
     }
 
-    public static int smallest(ArrayList<Integer> numbers){
-        int smallestNum = numbers.get(0);
-        for (int num : numbers) {
+    public static double smallest(ArrayList<Double> numbers){
+        double smallestNum = numbers.get(0);
+        for (double num : numbers) {
             if (num < smallestNum) {
                 smallestNum = num;
             }

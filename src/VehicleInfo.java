@@ -2,7 +2,7 @@ import java.util.*;
 
 public class VehicleInfo {
     public static HashMap<String, String> vehicleList = new HashMap<>();
-    private static Scanner input2 = new Scanner(System.in);
+    private static Scanner carInput = new Scanner(System.in);
 
     public static void createVehicleHashMap() {
         vehicleList.put("Honda", "Civic");
@@ -17,8 +17,7 @@ public class VehicleInfo {
 
     public static String askUserForCarType(){
         System.out.println("Please enter the Make of the car you are looking for: ");
-        String carType = input2.next();
-        System.out.println("hello?");
+        String carType = carInput.nextLine();
         return carType;
     }
 
@@ -26,5 +25,4 @@ public class VehicleInfo {
         String carChoice = vehicleList.get(carType);
         return carChoice;
     }
-
 }

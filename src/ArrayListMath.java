@@ -2,16 +2,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ArrayListMath {
-    private static Scanner input2 = new Scanner(System.in);
+    private static Scanner numInput = new Scanner(System.in);
 
     public static void askUserForNum(ArrayList<Integer> numbers) {
 
         for(int i = 0; i <=4; i++) {
             System.out.println("Please enter a number and press enter: ");
-            String currentNumber = input2.nextLine();
+            String currentNumber = numInput.nextLine();
             numbers.add(Integer.parseInt(currentNumber));
         }
-        input2.close();
     }
 
     public static int sum(ArrayList<Integer> numbers){
@@ -49,5 +48,4 @@ public class ArrayListMath {
         }
         return smallestNum;
     }
-
 }
